@@ -12,7 +12,7 @@
 	if ($sql_resultado_alteracao == true)
 	{
 		echo "<script>
-				alert ('Roupa colocada na fila de compra com sucesso') 
+				alert ('Roupa colocado na fila de compra com sucesso') 
 			  </script>";
 		echo "<script> 
 				 location.href = ('vendas.php') 
@@ -22,7 +22,11 @@
 	else
 	{    
 		echo "<script> 
+<<<<<<< HEAD
 				alert ('Ocorreu um erro no servidor. A roupa não foi adicionada na fila de compras. Tente de novo') 
+=======
+				alert ('Ocorreu um erro no servidor. A roupa n�o foi colocado na fila de compras. Tente de novo') 
+>>>>>>> refs/remotes/origin/main
 			</script>";
 		echo "<script> 
 				location.href ('vendas.php') 
