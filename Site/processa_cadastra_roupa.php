@@ -13,7 +13,7 @@
 	$foto_nome = "img/".$foto["name"];
 	move_uploaded_file($foto["tmp_name"], $foto_nome);
 	
-	$sql_cadastrar = "INSERT INTO amplificadores (tipo, 
+	$sql_cadastrar = "INSERT INTO roupas (tipo, 
 											marca, 
 											tamanho, 
 											categoria, 
