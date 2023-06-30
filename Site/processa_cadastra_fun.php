@@ -1,13 +1,13 @@
 <?php
-	$conectar = mysqli_connect ("localhost", "root", "", "sistema_modelo");
+	$conectar = mysqli_connect ("localhost", "root", "", "lojaderoupas");
 		
 	$nome = $_POST["nome"];
 	$login = $_POST["login"];
 	$senha = $_POST["senha"];
 	$funcao = $_POST["funcao"];
 
-	$sql_consulta = "SELECT login_fun FROM funcionarios 
-					 WHERE login_fun = '$login'";
+	$sql_consulta = "SELECT login FROM funcionarios 
+					 WHERE login = '$login'";
 							 
 	$resultado_consulta = mysqli_query ($conectar, $sql_consulta);
 		
@@ -23,10 +23,10 @@
 					location.href = ('cadastra_fun.php') 
 			  </script>";			
 	}
-	else { //Para o usuario que não existe	
+	else { //Para o usuario que nï¿½o existe	
 
 		$sql_cadastrar = "INSERT INTO funcionarios 
-				(nome_fun, funcao_fun, login_fun, senha_fun) 
+				(nome, funcao, login, senha) 
 						  VALUES 
 				('$nome' , '$funcao', '$login' , '$senha')";
 		$resultado_cadastrar = mysqli_query ($conectar, $sql_cadastrar);
@@ -42,7 +42,7 @@
 		}
 		else { 		
 			echo "<script> 
-					alert ('ocorreu um erro no servidor. Tente de novo') 
+					alert ('Ocorreu um erro no servidor. Tente de novo') 
 			     </script>";
 		
 			echo "<script> 

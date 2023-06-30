@@ -1,5 +1,5 @@
 ﻿<?php
-	if ($_SESSION["funcao_fun"] == "administrador") {
+	if ($_SESSION["funcao"] == "administrador") {
 ?>
 <ul>
 	<li><a href="administracao.php" class="active">Administração</a></li>
@@ -11,15 +11,15 @@
 
 <?php
 	}
-	elseif ($_SESSION["funcao_fun"] == "estoquista") {
+	elseif ($_SESSION["funcao"] == "estoquista") {
 ?>
 <ul>
 	<li><a href="administracao.php" class="active">Administração</a></li>
-	<li><a href="lista_amp.php">Amplificadores</a></li>					
+	<li><a href="lista_amp.php">Roupas</a></li>					
 </ul> 
 <?php		
 	}
-	elseif ($_SESSION["funcao_fun"] == "vendedor") {
+	elseif ($_SESSION["funcao"] == "vendedor") {
 ?>
 <ul>
 	<li><a href="administracao.php" class="active">Administração</a></li>
