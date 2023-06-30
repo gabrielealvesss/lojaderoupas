@@ -22,11 +22,7 @@
 	else
 	{    
 		echo "<script> 
-<<<<<<< HEAD
-				alert ('Ocorreu um erro no servidor. A roupa não foi adicionada na fila de compras. Tente de novo') 
-=======
 				alert ('Ocorreu um erro no servidor. A roupa n�o foi colocado na fila de compras. Tente de novo') 
->>>>>>> refs/remotes/origin/main
 			</script>";
 		echo "<script> 
 				location.href ('vendas.php') 

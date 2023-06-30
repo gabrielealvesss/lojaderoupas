@@ -1,12 +1,12 @@
 <?php
 	session_start();
 	
-	$conectar = mysqli_connect ("localhost", "root", "", "sistema_modelo");
+	$conectar = mysqli_connect ("localhost", "root", "", "lojaderoupas");
 	
 	$login = $_POST["login"];
 	$senha = $_POST["senha"];	
 		
-	$sql_consulta = "SELECT cod_fun, nome, login, senha, funcao FROM funcionarios
+	$sql_consulta = "SELECT COD_FUN, nome, login, senha, funcao FROM funcionarios
 					 WHERE 
 					       login = '$login' 
 					 AND 
@@ -19,7 +19,7 @@
 	
 	if ($linhas == 1) {	
 		$registro = mysqli_fetch_row($resultado_consulta);
-		$_SESSION["codigo_fun"] = $registro[0];
+		$_SESSION["COD_FUN"] = $registro[0];
 		$_SESSION["nome"] = $registro[1];
 		$_SESSION["login"] = $registro[2];
 		$_SESSION["funcao"] = $registro[4];		
