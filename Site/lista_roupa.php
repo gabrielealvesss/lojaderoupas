@@ -39,9 +39,9 @@
 				</div>		
 				<div id="funcionalidade" class="div_direita">
 					<?php
-						$conectar = mysqli_connect ("localhost", "root", "", "sistema_modelo");			
+						$conectar = mysqli_connect ("localhost", "root", "", "lojaderoupas");			
 					
-						$sql_consulta = "SELECT cod_amp, marca_amp, modelo_amp, tipo_amp, preco_amp FROM amplificadores";
+						$sql_consulta = "SELECT cod_roupa,tipo, marca, tamanho ,categoria, preco FROM roupa";
 						$resultado_consulta = mysqli_query ($conectar, $sql_consulta);
 						
 							
