@@ -39,34 +39,50 @@
 				</div>		
 				<div id="funcionalidade" class="div_direita">
 					<?php
-						$conectar = mysqli_connect ("localhost", "root", "", "sistema_modelo");
+						$conectar = mysqli_connect ("localhost", "root", "", "lojaderoupas");
 						
 						$cod = $_GET["codigo"];
 										
-						$sql_pesquisa = "SELECT  cod_amp, marca_amp, modelo_amp, tipo_amp, preco_amp, foto_amp
-										FROM amplificadores
-										 WHERE cod_amp = '$cod'";
+						$sql_pesquisa = "SELECT  cod_roupa, tipo , marca ,tamanho , categoria , preco
+										FROM roupa
+										 WHERE cod_roupa = '$cod'";
 						$resultado_pesquisa = mysqli_query ($conectar, $sql_pesquisa);	
 						
 						$registro = mysqli_fetch_row($resultado_pesquisa);
 					?>
-					<form method="post" action="processa_altera_amp.php">
+					<form method="post" action="processa_altera_roupa.php">
 						<input type="hidden" name="codigo" value="<?php echo "$cod"; ?>">
 						<table class="centralizar">	
 							<tr>
 								<td>
-									<p> Marca: </p>
+									<p> Tipo: </p>
 								</td>
 								<td>
-									<p> <input type="text" name="marca" required value="<?php echo "$registro[1]"; ?>" > </p>
+									<p> <input type="text" name="tipo" required value="<?php echo "$registro[1]"; ?>" > </p>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<p> Modelo: </p>
+									<p> Marca: </p>
 								</td>
 								<td> 
-									<p> <input type="text" name="modelo" required value="<?php echo "$registro[2]"; ?>"> </p>
+									<p> <input type="text" name="marca" required value="<?php echo "$registro[2]"; ?>"> </p>
+								</td>								
+							</tr>
+							<tr>
+								<td>
+									<p> Tamanho: </p>
+								</td>
+								<td> 
+									<p> <input type="text" name="tamanho" required value="<?php echo "$registro[2]"; ?>"> </p>
+								</td>								
+							</tr>
+							<tr>
+								<td>
+									<p> Categoria: </p>
+								</td>
+								<td> 
+									<p> <input type="text" name="categoria" required value="<?php echo "$registro[2]"; ?>"> </p>
 								</td>								
 							</tr>
 							<tr>
@@ -92,23 +108,23 @@
 								<td>
 									<p>
 										<select name="tipo">
-											<option value="guitarra"
+											<option value="regata"
 												<?php
-														if ($registro[3] == "guitarra") {
+														if ($registro[3] == "regata") {
 															echo "selected";
 														}
 													?>
-												> Guitarra </option>
-											<option value="baixo"
+												>Blusa </option>
+											<option value="blusa"
 												<?php
-														if ($registro[3] == "baixo") {
+														if ($registro[3] == "blusa") {
 															echo "selected";
 														}
 													?>
-											> Baixo </option>
-											<option value="violao"
+											> Blusa </option>
+											<option value="blusa"
 												<?php
-														if ($registro[3] == "violao") {
+														if ($registro[3] == "blusa") {
 															echo "selected";
 														}
 													?> 

@@ -77,7 +77,7 @@
 							</td>
 							<td>
 								<p>
-									<a href="exibe_amp.php?codigo=<?php echo $registro[0]?>"> 
+									<a href="exibe_roupa.php?codigo=<?php echo $registro[0]?>"> 
 										<?php 
 											echo "$registro[2]";
 										?>
