@@ -39,7 +39,7 @@
 			<div id="rodape">
 				<div id="texto_institucional">
 					<div id="texto_institucional">
-						<h6> LIZZ - CONTROLADORE </h6> 
+						<h6> LIZZ - CONTROL </h6> 
 						<h6> Rua 324, CJ 788 -- E-mail: contato@lizzroupas.com.br -- Fone: (61) 9966 - 6677 </h6> 
 					</div> 
 				</div>
