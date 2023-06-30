@@ -8,9 +8,9 @@
 		
 	$sql_consulta = "SELECT cod_fun, nome, login, senha, funcao FROM funcionarios
 					 WHERE 
-					       login_fun = '$login' 
+					       login = '$login' 
 					 AND 
-					       senha_fun = '$senha'";
+					       senha = '$senha'";
 					 
 	$resultado_consulta = mysqli_query ($conectar, $sql_consulta);
 	
