@@ -3,34 +3,36 @@
 
 	$conectar = mysqli_connect ("localhost", "root", "", "sistema_modelo");
 	
+	$tipo = $_POST["tipo"];
 	$marca = $_POST["marca"];
-	$modelo = $_POST["modelo"];
+	$tamanho = $_POST ["tamanho"];
+	$categoria = $_POST["categoria"];	
 	$preco = $_POST ["preco"];
-	$tipo = $_POST["tipo"];	
 	$foto = $_FILES["foto"];
 	
 	$foto_nome = "img/".$foto["name"];
 	move_uploaded_file($foto["tmp_name"], $foto_nome);
 	
-	$sql_cadastrar = "INSERT INTO amplificadores (marca_amp, 
-											modelo_amp, 
-											preco_amp, 
-											tipo_amp, 
-											foto_amp) 
-					  VALUES 			   ('$marca',
-											'$modelo', 
+	$sql_cadastrar = "INSERT INTO amplificadores (tipo, 
+											marca, 
+											tamanho, 
+											categoria, 
+											preco) 
+					  VALUES 			   ('$tipo',
+											'$marca', 
+											'$tamanho',
+											'$categoria',
 											'$preco',
-											'$tipo',
 											'$foto_nome')";
 											
 	$sql_resultado_cadastrar = mysqli_query ($conectar, $sql_cadastrar);
 	
 	if ($sql_resultado_cadastrar == true) { 	
 		echo "<script>
-				alert ('$modelo cadastrado com sucesso') 
+				alert ('$categoria cadastrado com sucesso') 
 			  </script>";
 		echo "<script>
-				location.href = ('cadastra_amp.php') 
+				location.href = ('cadastra_roupa.php') 
 			  </script>";		
 	}
 	else { 	
@@ -40,7 +42,7 @@
 			  </script>";
 		
 		echo "<script> 
-				location.href = ('cadastra_amp.php') 
+				location.href = ('cadastra_roupa.php') 
 			  </script>";
 	
 	}
